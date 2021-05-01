@@ -1,5 +1,7 @@
 #/bin/python3
 import random, time
+from termcolor import colored, cprint
+
 from helper import *
 
 class Player:

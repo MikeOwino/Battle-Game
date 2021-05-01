@@ -1,13 +1,14 @@
 #!/bin/python3
 import random, time
+from termcolor import colored, cprint
 from player import *
 from special import *
 from helper import *
 
-print("Welcome to the battle game.")
+cprint("Welcome to the battle game.", 'green')
 print("")
 time.sleep(0.1)
-print("Do you want to be the hero or the villain? (Type 'h' for hero and 'v' for villain.)")
+cprint("Do you want to be the hero or the villain? (Type 'h' for hero and 'v' for villain.)", 'yellow')
 mode = input(">")
 
 if mode != 'h' and mode != 'v':
@@ -22,17 +23,17 @@ if mode != 'h' and mode != 'v':
 heroes = ['Spiderman', 'Pikachu', 'Hercules', 'Jedi']
 villains = ['Voldemort', 'Thanos', 'Medusa']
 if mode == 'h':
-  print("The computer will be the villain, and you will be the hero.")
+  cprint("The computer will be the villain, and you will be the hero.", 'yellow')
   userchars = heroes
   botchars = villains
 else:
-  print("The computer will be the hero, and you will be the villain.")
+  cprint("The computer will be the hero, and you will be the villain.", 'yellow')
   userchars = villains
   botchars = heroes
 
 print("")
 time.sleep(0.2)
-print("Do you want to choose your character or do you want it to be random? (Type 'c' for choose and 'r' for random.)")
+cprint("Do you want to choose your character or do you want it to be random? (Type 'c' for choose and 'r' for random.)", 'yellow')
 answer = input(">")
 print("")
 
@@ -48,7 +49,7 @@ if answer != 'c' and answer != 'r':
       break
 
 if answer == 'c':
-  print("Choose one of the following characters to fight against the enemy!")
+  cprint("Choose one of the following characters to fight against the enemy!", 'yellow')
   print("")
   
   time.sleep(0.2)
@@ -59,7 +60,7 @@ if answer == 'c':
     
   if player not in userchars:
     while True:
-      print("Please enter one of the characters mentioned above.")
+      cprint("Please enter one of the characters mentioned above.", 'yellow')
       player = input(">")
       print("")
       
@@ -68,9 +69,9 @@ if answer == 'c':
 
 elif answer == 'r':
   player = random.choice(userchars)
-  print("Your character is...")
+  cprint("Your character is...", 'yellow')
   time.sleep(0.2)
-  print(player + "!")
+  cprint(player + "!", 'magenta')
   print("")
   time.sleep(0.2)
   
@@ -120,9 +121,9 @@ elif villain == "Medusa":
   bot = Medusa()
   
 
-print("The enemy {} will be fighting against is...".format(player))
+cprint("The enemy {} will be fighting against is...".format(player), 'cyan')
 time.sleep(0.2)
-print("{}!".format(villain))
+cprint("{}!".format(villain),'blue')
 
 time.sleep(0.2)
 get_status(user, bot)
@@ -133,13 +134,13 @@ while True:
   time.sleep(0.2)
   
   if user.health <= 0:
-    print("{} has no more health...".format(player))
+    cprint("{} has no more health...".format(player), 'red')
     time.sleep(0.2)
     print("Computer wins!")
     break
 
   elif bot.health <= 0:
-    print("{} has no more health...".format(villain))
+    cprint("{} has no more health...".format(villain), 'red')
     time.sleep(0.2)
     print("You win!")
     break
@@ -148,13 +149,13 @@ while True:
   time.sleep(0.2)
   
   if user.health <= 0:
-    print("{} has no more health...".format(player))
+    cprint("{} has no more health...".format(player), 'red')
     time.sleep(0.2)
     print("Computer wins!")
     break
 
   elif bot.health <= 0:
-    print("{} has no more health...".format(villain))
+    cprint("{} has no more health...".format(villain), 'red')
     time.sleep(0.2)
     print("You win!")
     break
