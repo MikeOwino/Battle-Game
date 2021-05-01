@@ -39,7 +39,7 @@ class Player:
   # enemy: Player object 
   
   def heal(self, enemy):
-    n = random.randint(25, 40)        # random number for health increase 
+    n = random.randint(25, 50)        # random number for health increase 
     n *= self.energy                  # multiplied by energy level
     self.health += n 
     print(self.name, "healed self", n)

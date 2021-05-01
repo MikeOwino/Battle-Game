@@ -206,8 +206,8 @@ class Thanos(Player):
 
   def finger_snap(self, enemy):
     damage = round(enemy.health / 2)
-    self.attack(enemy, damage) # reduces enemy's health by half
-    n = random.uniform(0, self.health / 2)
+    self.attack(enemy, damage) # reduces enemy's health by two
+    n = random.uniform(0, self.health / 100)
     self.attack(self, round(n)) # also randomly injures himself
 
 
