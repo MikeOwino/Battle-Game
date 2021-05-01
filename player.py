@@ -7,7 +7,7 @@ class Player:
   # __init__() method initializes new instance of Player
   def __init__(self, name): 
     self.name = name                          
-    self.health = 100 
+    self.health = 1000
     self.energy = 1
     self.moves = {}                           # create dictionary of moves
     
