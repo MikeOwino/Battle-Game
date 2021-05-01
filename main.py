@@ -13,7 +13,7 @@ mode = input(">")
 
 if mode != 'h' and mode != 'v':
   while True:
-    print("Invalid input.")
+    cprint("Invalid input.", 'red')
     mode = input(">")
     print("")
     
@@ -41,7 +41,7 @@ print("")
   
 if answer != 'c' and answer != 'r':
   while True:
-    print("Invalid input.")
+    cprint("Invalid input.",'red')
     answer = input(">")
     print("")
     

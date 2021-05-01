@@ -181,7 +181,7 @@ class Voldemort(Player):
     self.moves["create Horcrux"] = self.create_Horcrux
 
   def avadakedavra(self, enemy):
-    print("AVADA KEDAVRA!")
+    cprint("AVADA KEDAVRA!", 'cyan')
     time.sleep(1) # wait 1 second
     if random.random() <= 0.75: # 3/4 chance attack will succeed
       self.attack(enemy, 50)
